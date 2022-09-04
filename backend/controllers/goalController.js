@@ -31,7 +31,7 @@ const updateGoals = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Goal not found ");
   }
-  //(which id to be updated, which to update, {new: true})
+  //(which id to be updated, which to update, {new: true}/{which field you wanna change:value})
   const updatedGoal = await Goal.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
   });
